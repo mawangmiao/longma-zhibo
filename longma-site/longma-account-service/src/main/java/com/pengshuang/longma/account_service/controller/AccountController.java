@@ -1,26 +1,25 @@
 package com.pengshuang.longma.account_service.controller;
 
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Slf4j
+import java.util.UUID;
+
 @RestController
 public class AccountController {
-    private final DiscoveryClient client;
 
-    public AccountController(DiscoveryClient client) {this.client = client;}
-
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public Integer add(@RequestParam Integer a, @RequestParam Integer b) {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        Integer r = a + b;
-        log.info("/add, host:" + instance.getHost() + ", service_id:" + instance.getServiceId() + ", result:" + r);
-        return r;
+    @RequestMapping(value = "/token", method = RequestMethod.GET)
+    public String getToken(
+            @RequestParam(value = "username") String username,
+            @RequestParam(value = "password") String password
+    ) {
+        if (StringUtils.equals(username, "pengshuang") && StringUtils.equals(password, "123456")) {
+            return UUID.randomUUID().toString();
+        }
+        return null;
     }
 
 }

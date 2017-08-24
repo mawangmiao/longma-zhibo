@@ -1,0 +1,14 @@
+target
+.project
+.classpath
+.settings
+.factorypath
+*.iml
+**/.idea/
+bin
+.gradle
+.metadata
+RemoteSystemsTempFiles
+.DS_Store
+*.log
+logs

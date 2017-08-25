@@ -9,18 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>longma-account-api</artifactId>
+    <artifactId>longma-common</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.pengshuang</groupId>
-            <artifactId>longma-common</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

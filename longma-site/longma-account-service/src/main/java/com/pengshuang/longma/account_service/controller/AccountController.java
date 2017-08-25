@@ -1,27 +1,23 @@
 package com.pengshuang.longma.account_service.controller;
 
-import lombok.extern.slf4j.Slf4j;
+import com.pengshuang.longma.account.api.AccountService;
+import com.pengshuang.longma.common.entity.StringResultMessage;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/account")
-public class AccountController {
+public class AccountController implements AccountService {
 
-    @RequestMapping(value = "/token", method = RequestMethod.GET)
-    public String getToken(
-            @RequestParam(value = "username") String username,
-            @RequestParam(value = "password") String password
-    ) {
+    @Override
+    public StringResultMessage getToken(String username, String password) {
+        String token = null;
         if (StringUtils.equals(username, "pengshuang") && StringUtils.equals(password, "123456")) {
-            return UUID.randomUUID().toString();
+            token = UUID.randomUUID().toString();
         }
-        return null;
+        return new StringResultMessage(token != null, token);
     }
 
 }

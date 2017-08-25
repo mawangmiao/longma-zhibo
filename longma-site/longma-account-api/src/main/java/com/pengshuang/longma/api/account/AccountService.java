@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 public interface AccountService {
 
-    @RequestMapping(value = "/account/token", method = RequestMethod.GET)
+    @RequestMapping(value = "/token", method = RequestMethod.GET)
     StringResult getToken(
             @RequestParam(value = "username") String username,
             @RequestParam(value = "password") String password

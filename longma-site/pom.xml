@@ -15,6 +15,7 @@
         <module>longma-chat-message-service</module>
         <module>longma-common</module>
         <module>longma-chat-message-api</module>
+        <module>longma-gateway</module>
     </modules>
     <packaging>pom</packaging>
 

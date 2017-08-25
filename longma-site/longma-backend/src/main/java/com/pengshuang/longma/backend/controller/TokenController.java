@@ -1,6 +1,8 @@
 package com.pengshuang.longma.backend.controller;
 
 import com.pengshuang.longma.account.api.AccountService;
+import com.pengshuang.longma.backend.view.ResultView;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,10 +16,11 @@ public class TokenController {
     public TokenController(AccountService accountService) {this.accountService = accountService;}
 
     @RequestMapping(value = "/token", method = RequestMethod.GET)
-    public String getToken(
+    public ResultView<String> getToken(
             @RequestParam(value = "username") String username,
             @RequestParam(value = "password") String password
     ) {
-        return accountService.getToken(username, password);
+        String token = accountService.getToken(username, password);
+        return StringUtils.isBlank(token) ? new ResultView<>(false, "") : new ResultView<>(true, token);
     }
 }

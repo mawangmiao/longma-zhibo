@@ -1,4 +1,4 @@
-package com.pengshuang.longma.message_service;
+package com.pengshuang.longma.service.account;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

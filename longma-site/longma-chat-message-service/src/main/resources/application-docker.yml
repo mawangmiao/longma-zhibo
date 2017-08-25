@@ -1,9 +1,9 @@
 server:
-  port: 8082
+  port: 0
 
 spring:
   application:
-    name: account-service
+    name: chat-message-service
 
 eureka:
   client:

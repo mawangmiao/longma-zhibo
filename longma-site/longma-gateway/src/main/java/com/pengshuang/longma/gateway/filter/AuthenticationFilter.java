@@ -4,6 +4,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.http.HttpStatus;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -29,15 +30,16 @@ public class AuthenticationFilter extends ZuulFilter {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
 
-        if (requestIsNotAuthorized(request)) {
+        if (!requestIsAuthorized(request)) {
             ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(401);
+            ctx.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());
+            ctx.setResponseBody("Request is not authorized");
             return null;
         }
         return null;
     }
 
-    private boolean requestIsNotAuthorized(HttpServletRequest request) {
+    private boolean requestIsAuthorized(HttpServletRequest request) {
         String token = request.getParameter("token");
         if (StringUtils.isBlank(token)) {
             log.info("token为空");

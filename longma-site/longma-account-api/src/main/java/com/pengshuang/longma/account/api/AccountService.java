@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient("account-service")
+@FeignClient(value = "account-service", fallback = AccountServiceFallback.class)
 public interface AccountService {
 
     @RequestMapping(value = "/account/token", method = RequestMethod.GET)

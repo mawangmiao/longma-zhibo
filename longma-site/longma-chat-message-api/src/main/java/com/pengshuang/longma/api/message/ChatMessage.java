@@ -1,4 +1,4 @@
-package com.pengshuang.longma.message.api;
+package com.pengshuang.longma.api.message;
 
 import lombok.Data;
 

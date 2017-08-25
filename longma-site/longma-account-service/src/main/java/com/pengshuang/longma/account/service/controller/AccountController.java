@@ -1,6 +1,6 @@
 package com.pengshuang.longma.account.service.controller;
 
-import com.pengshuang.longma.account.api.AccountService;
+import com.pengshuang.longma.api.account.AccountService;
 import com.pengshuang.longma.common.entity.StringResult;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RestController;

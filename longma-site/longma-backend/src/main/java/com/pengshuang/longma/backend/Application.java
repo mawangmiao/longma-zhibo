@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableFeignClients(basePackages = {"com.pengshuang.longma.account.api"})
+@EnableFeignClients(basePackages = {"com.pengshuang.longma.api"})
 @ComponentScan(basePackages = {"com.pengshuang.longma"})
 public class Application {
 

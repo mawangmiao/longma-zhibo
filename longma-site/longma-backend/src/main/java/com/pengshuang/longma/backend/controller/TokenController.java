@@ -1,6 +1,6 @@
 package com.pengshuang.longma.backend.controller;
 
-import com.pengshuang.longma.account.api.AccountServiceFeignClient;
+import com.pengshuang.longma.api.account.AccountServiceFeignClient;
 import com.pengshuang.longma.common.entity.StringResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

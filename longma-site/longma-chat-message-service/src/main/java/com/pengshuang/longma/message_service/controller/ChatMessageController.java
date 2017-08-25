@@ -1,8 +1,8 @@
 package com.pengshuang.longma.message_service.controller;
 
 import com.pengshuang.longma.common.entity.StringResult;
-import com.pengshuang.longma.message.api.ChatMessage;
-import com.pengshuang.longma.message.api.ChatMessageService;
+import com.pengshuang.longma.api.message.ChatMessage;
+import com.pengshuang.longma.api.message.ChatMessageService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

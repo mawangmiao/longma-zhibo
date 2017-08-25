@@ -1,4 +1,4 @@
-package com.pengshuang.longma.account.api;
+package com.pengshuang.longma.api.account;
 
 import com.pengshuang.longma.common.entity.StringResult;
 import org.springframework.web.bind.annotation.RequestMapping;

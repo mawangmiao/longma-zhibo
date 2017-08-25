@@ -1,4 +1,4 @@
-package com.pengshuang.longma.account.api;
+package com.pengshuang.longma.api.account;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 

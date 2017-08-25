@@ -1,4 +1,4 @@
-package com.pengshuang.longma.message.api;
+package com.pengshuang.longma.api.message;
 
 import com.pengshuang.longma.common.entity.StringResult;
 import org.springframework.web.bind.annotation.RequestBody;

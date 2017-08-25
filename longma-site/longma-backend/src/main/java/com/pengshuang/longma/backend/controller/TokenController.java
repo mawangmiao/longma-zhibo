@@ -1,7 +1,7 @@
 package com.pengshuang.longma.backend.controller;
 
 import com.pengshuang.longma.account.api.AccountServiceFeignClient;
-import com.pengshuang.longma.common.entity.StringResultMessage;
+import com.pengshuang.longma.common.entity.StringResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +15,7 @@ public class TokenController {
     public TokenController(AccountServiceFeignClient accountService) {this.accountService = accountService;}
 
     @RequestMapping(value = "/token", method = RequestMethod.GET)
-    public StringResultMessage getToken(
+    public StringResult getToken(
             @RequestParam(value = "username") String username,
             @RequestParam(value = "password") String password
     ) {

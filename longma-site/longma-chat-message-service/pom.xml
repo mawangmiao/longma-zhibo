@@ -9,12 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>longma-message-service</artifactId>
+    <artifactId>longma-chat-message-service</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.pengshuang</groupId>
+            <artifactId>longma-chat-message-api</artifactId>
         </dependency>
     </dependencies>
 

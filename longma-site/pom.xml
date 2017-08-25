@@ -12,8 +12,9 @@
         <module>longma-account-service</module>
         <module>longma-backend</module>
         <module>longma-account-api</module>
-        <module>longma-message-service</module>
+        <module>longma-chat-message-service</module>
         <module>longma-common</module>
+        <module>longma-chat-message-api</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -45,6 +46,11 @@
             <dependency>
                 <groupId>com.pengshuang</groupId>
                 <artifactId>longma-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pengshuang</groupId>
+                <artifactId>longma-chat-message-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

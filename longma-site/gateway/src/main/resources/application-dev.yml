@@ -15,6 +15,6 @@ zuul:
       path: /chat-message/**
       serviceId: chat-message-service
     account:
-      path: /account/**
-      serviceId: account-service
-  prefix: /api
+      path: /auth/**
+      serviceId: auth-service
+#  prefix: /api

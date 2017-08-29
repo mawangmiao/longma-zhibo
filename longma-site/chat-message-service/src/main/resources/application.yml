@@ -20,7 +20,7 @@ security:
 #      user-authorization-uri: http://localhost:8000/oauth/authorize
     resource:
       loadBalanced: true
-      user-info-uri: http://auth-service:8000/me
+      user-info-uri: http://auth-service/me
 
 logging:
   level:

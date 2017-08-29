@@ -1,4 +1,4 @@
-package com.pengshuang.longma.service.account.controller;
+package com.pengshuang.longma.service.auth.controller;
 
 import com.pengshuang.longma.api.account.AccountService;
 import com.pengshuang.longma.common.entity.StringResult;

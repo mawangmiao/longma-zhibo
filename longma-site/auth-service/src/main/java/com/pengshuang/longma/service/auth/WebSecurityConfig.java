@@ -1,4 +1,4 @@
-package com.pengshuang.longma.service.account;
+package com.pengshuang.longma.service.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;

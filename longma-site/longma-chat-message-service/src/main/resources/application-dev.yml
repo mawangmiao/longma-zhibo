@@ -1,5 +1,6 @@
 server:
-  port: 8083
+  port: 9999
+  context-path: /chat-message
 
 spring:
   application:
@@ -9,3 +10,18 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      access-token-uri: http://localhost:8082/oauth/token
+      user-authorization-uri: http://localhost:8082/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8082/me
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG

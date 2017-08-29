@@ -2,21 +2,37 @@ package com.pengshuang.longma.service.account.controller;
 
 import com.pengshuang.longma.api.account.AccountService;
 import com.pengshuang.longma.common.entity.StringResult;
-import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.UUID;
+import java.security.Principal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @RestController
 public class AccountController implements AccountService {
 
     @Override
     public StringResult getToken(String username, String password) {
-        String token = null;
-        if (StringUtils.equals(username, "pengshuang") && StringUtils.equals(password, "123456")) {
-            token = UUID.randomUUID().toString();
-        }
-        return new StringResult(token != null, token);
+        return null;
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String welcome() {
+        return "Welcome to Account Service";
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello(Principal user) {
+        return "Hello " + user.getName();
+    }
+
+    @RequestMapping({"/user", "/me"})
+    public Map<String, String> user(Principal principal) {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("name", principal.getName());
+        return map;
     }
 
 }

@@ -19,7 +19,8 @@ security:
 #      access-token-uri: http://localhost:8000/oauth/token
 #      user-authorization-uri: http://localhost:8000/oauth/authorize
     resource:
-      user-info-uri: http://localhost:8000/me
+      loadBalanced: true
+      user-info-uri: http://auth-service:8000/me
 
 logging:
   level:

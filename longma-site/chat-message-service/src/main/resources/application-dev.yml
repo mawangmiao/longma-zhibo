@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 8001
   context-path: /chat-message
 
 spring:
@@ -16,10 +16,10 @@ security:
     client:
       client-id: acme
       client-secret: acmesecret
-      access-token-uri: http://localhost:8080/oauth/token
-      user-authorization-uri: http://localhost:8080/oauth/authorize
+      access-token-uri: http://localhost:8000/oauth/token
+      user-authorization-uri: http://localhost:8000/oauth/authorize
     resource:
-      user-info-uri: http://localhost:8080/me
+      user-info-uri: http://localhost:8000/me
 
 #logging:
 #  level:

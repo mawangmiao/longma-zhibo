@@ -1,5 +1,5 @@
 server:
-  port: 7070
+  port: 8080
 
 spring:
   application:
@@ -12,9 +12,11 @@ eureka:
 zuul:
   routes:
     chat-message:
-      path: /chat-message/**
+      path: /chat/**
+      sensitiveHeaders:
       serviceId: chat-message-service
     account:
       path: /auth/**
+      sensitiveHeaders:
       serviceId: auth-service
 #  prefix: /api

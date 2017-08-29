@@ -8,14 +8,14 @@
     <artifactId>longma-site</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>longma-service-register-center</module>
-        <module>longma-account-service</module>
-        <module>longma-backend</module>
-        <module>longma-account-api</module>
-        <module>longma-chat-message-service</module>
-        <module>longma-common</module>
-        <module>longma-chat-message-api</module>
-        <module>longma-gateway</module>
+        <module>service-register-center</module>
+        <module>account-service</module>
+        <module>backend</module>
+        <module>account-api</module>
+        <module>chat-message-service</module>
+        <module>common</module>
+        <module>chat-message-api</module>
+        <module>gateway</module>
     </modules>
     <packaging>pom</packaging>
 

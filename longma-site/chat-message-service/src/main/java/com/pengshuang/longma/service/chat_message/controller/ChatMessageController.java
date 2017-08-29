@@ -17,7 +17,7 @@ public class ChatMessageController implements ChatMessageService {
         return new StringResult(false, "");
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String welcome(Principal user) {
         return "Welcome to Chat Service, " + user.getName();
     }

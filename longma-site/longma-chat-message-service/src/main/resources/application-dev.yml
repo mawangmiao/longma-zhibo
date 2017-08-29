@@ -21,7 +21,7 @@ security:
     resource:
       user-info-uri: http://localhost:8082/me
 
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
+#logging:
+#  level:
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG

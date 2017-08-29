@@ -18,7 +18,7 @@ security:
       scope: read,write
       auto-approve-scopes: '.*'
 
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
+#logging:
+#  level:
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG

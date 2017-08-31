@@ -1,0 +1,30 @@
+version: '2'
+services:
+  service-register-center:
+    image: longma-site/service-register-center:1.0-SNAPSHOT
+    ports:
+      - "8761:8761"
+  gateway:
+    image: longma-site/gateway:1.0-SNAPSHOT
+    ports:
+      - "7070:7070"
+    environment:
+      EUREKA_HOST: service-register-center
+    depends_on:
+      - service-register-center
+  auth-service:
+    image: longma-site/auth-service:1.0-SNAPSHOT
+    ports:
+      - "8000:8000"
+    environment:
+      EUREKA_HOST: service-register-center
+    depends_on:
+      - service-register-center
+  chat-message-service:
+    image: longma-site/chat-message-service:1.0-SNAPSHOT
+    ports:
+      - "8010:8010"
+    environment:
+      EUREKA_HOST: service-register-center
+    depends_on:
+      - service-register-center

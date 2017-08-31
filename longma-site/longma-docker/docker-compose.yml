@@ -14,16 +14,16 @@ services:
       - service-register-center
   auth-service:
     image: longma-site/auth-service:1.0-SNAPSHOT
-#    ports:
-#      - "8000:8000"
+    ports:
+      - "8000"
     environment:
       EUREKA_HOST: service-register-center
     depends_on:
       - service-register-center
   chat-message-service:
     image: longma-site/chat-message-service:1.0-SNAPSHOT
-#    ports:
-#      - "8010:8010"
+    ports:
+      - "8010"
     environment:
       EUREKA_HOST: service-register-center
     depends_on:

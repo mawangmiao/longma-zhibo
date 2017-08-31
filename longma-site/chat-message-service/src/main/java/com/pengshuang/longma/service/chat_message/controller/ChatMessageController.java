@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.security.Principal;
 
 @RestController
@@ -19,7 +21,18 @@ public class ChatMessageController implements ChatMessageService {
 
     @RequestMapping(value = "/welcome", method = RequestMethod.GET)
     public String welcome(Principal user) {
-        return "Welcome to Chat Service, " + user.getName();
+        String ip = null;
+        String host = null;
+
+        try {
+            InetAddress ia = InetAddress.getLocalHost();
+            host = ia.getHostName();//获取计算机主机名
+            ip = ia.getHostAddress();//获取计算机IP
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+
+        return String.format("[%s] [%s] Welcome to Chat Service, %s", ip, host, user.getName());
     }
 
 }

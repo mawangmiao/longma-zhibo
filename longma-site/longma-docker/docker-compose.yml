@@ -3,11 +3,11 @@ services:
   service-register-center:
     image: longma-site/service-register-center:1.0-SNAPSHOT
     ports:
-      - "18761:8761"
+      - "8761:8761"
   gateway:
     image: longma-site/gateway:1.0-SNAPSHOT
     ports:
-      - "18080:8080"
+      - "7070:7070"
     environment:
       EUREKA_HOST: service-register-center
     depends_on:

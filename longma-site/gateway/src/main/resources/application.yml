@@ -1,3 +1,27 @@
+server:
+  port: 7070
+
 spring:
-  profiles:
-    active: dev
+  application:
+    name: gateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
+zuul:
+  routes:
+    chat-message:
+      path: /chat/**
+      sensitiveHeaders:
+      serviceId: chat-message-service
+    account:
+      path: /auth/**
+      sensitiveHeaders:
+      serviceId: auth-service
+#  prefix: /api
+
+logging:
+  file: log/@project.artifactId@.log
+  level:
+    org.springframework.web: DEBUG

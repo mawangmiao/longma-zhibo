@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <springProperty scope="context" name="applicationName" source="spring.application.name" defaultValue="machine"/>
 
     <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>logstash:5000</destination>
@@ -15,7 +16,7 @@
                 <pattern>
                     <pattern>
                         {
-                            "serviceName": "gateway"
+                            "serviceName": "${applicationName}"
                         }
                     </pattern>
                 </pattern>
@@ -28,8 +29,10 @@
         </encoder>
     </appender>
 
-    <root level="INFO">
-        <appender-ref ref="STASH"/>
-    </root>
+    <springProfile name="docker">
+        <root level="INFO">
+            <appender-ref ref="STASH"/>
+        </root>
+    </springProfile>
 
 </configuration>

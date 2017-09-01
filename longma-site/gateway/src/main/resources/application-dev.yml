@@ -20,3 +20,6 @@ zuul:
       sensitiveHeaders:
       serviceId: auth-service
 #  prefix: /api
+
+logging:
+  file: log/@project.artifactId@.log

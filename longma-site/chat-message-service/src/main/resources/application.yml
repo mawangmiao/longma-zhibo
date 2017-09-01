@@ -24,5 +24,6 @@ security:
 
 logging:
   level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG
+  file: log/@project.artifactId@.log

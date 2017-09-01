@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: auth-service
+    name: @project.artifactId@
 
 eureka:
   client:
@@ -18,7 +18,8 @@ security:
       scope: read,write
       auto-approve-scopes: '.*'
 
-#logging:
+logging:
+  file: log/@project.artifactId@.log
 #  level:
 #    org.springframework.security: DEBUG
 #    org.springframework.web: DEBUG

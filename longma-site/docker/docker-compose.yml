@@ -6,6 +6,8 @@ services:
       - "8761:8761"
     depends_on:
       - logstash
+    networks:
+      - longma
 
   gateway:
     image: longma-site/gateway:1.0-SNAPSHOT
@@ -15,6 +17,8 @@ services:
       EUREKA_HOST: service-register-center
     depends_on:
       - service-register-center
+    networks:
+      - longma
 
   auth-service:
     image: longma-site/auth-service:1.0-SNAPSHOT
@@ -24,6 +28,8 @@ services:
       EUREKA_HOST: service-register-center
     depends_on:
       - service-register-center
+    networks:
+      - longma
 
   chat-message-service:
     image: longma-site/chat-message-service:1.0-SNAPSHOT
@@ -33,6 +39,8 @@ services:
       EUREKA_HOST: service-register-center
     depends_on:
       - service-register-center
+    networks:
+      - longma
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:5.5.0

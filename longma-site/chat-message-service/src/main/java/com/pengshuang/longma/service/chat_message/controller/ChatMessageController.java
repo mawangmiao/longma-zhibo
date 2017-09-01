@@ -3,6 +3,7 @@ package com.pengshuang.longma.service.chat_message.controller;
 import com.pengshuang.longma.api.message.ChatMessage;
 import com.pengshuang.longma.api.message.ChatMessageService;
 import com.pengshuang.longma.common.entity.StringResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.Principal;
 
+@Slf4j
 @RestController
 public class ChatMessageController implements ChatMessageService {
 
@@ -32,7 +34,9 @@ public class ChatMessageController implements ChatMessageService {
             e.printStackTrace();
         }
 
-        return String.format("[%s] [%s] Welcome to Chat Service, %s", ip, host, user.getName());
+        String message = String.format("[%s] [%s] Welcome to Chat Service, %s", ip, host, user.getName());
+        log.info(message);
+        return message;
     }
 
 }

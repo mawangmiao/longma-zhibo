@@ -9,4 +9,4 @@ eureka:
     waitTimeInMsWhenSyncEmpty: 0
 
 logging:
-  file: @project.parent.artifactId@-log/@project.artifactId@.log
+  file: log/@project.artifactId@.log

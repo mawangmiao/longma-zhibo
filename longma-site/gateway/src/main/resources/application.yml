@@ -1,10 +1,6 @@
 server:
   port: 7070
 
-spring:
-  application:
-    name: @project.artifactId@
-
 eureka:
   client:
     serviceUrl:
@@ -25,3 +21,15 @@ logging:
   file: log/@project.artifactId@.log
   level:
     org.springframework.web: DEBUG
+
+spring:
+  application:
+    name: @project.artifactId@
+  zipkin:
+    enabled: false
+---
+spring:
+  profiles: docker
+  zipkin:
+    enabled: true
+    base-url: http://zipkin:9411/

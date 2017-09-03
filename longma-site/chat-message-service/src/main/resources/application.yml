@@ -2,10 +2,6 @@ server:
   port: 8010
 #  context-path: /chat-message
 
-spring:
-  application:
-    name: @project.artifactId@
-
 eureka:
   client:
     serviceUrl:
@@ -27,3 +23,15 @@ logging:
 #    org.springframework.security: DEBUG
 #    org.springframework.web: DEBUG
   file: log/@project.artifactId@.log
+
+spring:
+  application:
+    name: @project.artifactId@
+  zipkin:
+    enabled: false
+---
+spring:
+  profiles: docker
+  zipkin:
+    enabled: true
+    base-url: http://zipkin:9411/

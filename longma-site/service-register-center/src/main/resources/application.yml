@@ -10,3 +10,15 @@ eureka:
 
 logging:
   file: log/@project.artifactId@.log
+
+spring:
+  application:
+    name: @project.artifactId@
+  zipkin:
+    enabled: false
+---
+spring:
+  profiles: docker
+  zipkin:
+    enabled: true
+    base-url: http://zipkin:9411/

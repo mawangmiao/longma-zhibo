@@ -4,8 +4,6 @@ services:
     image: longma-site/service-register-center:1.0-SNAPSHOT
     ports:
       - "8761:8761"
-    depends_on:
-      - logstash
     networks:
       - longma
 
@@ -15,8 +13,6 @@ services:
       - "7070:7070"
     environment:
       EUREKA_HOST: service-register-center
-    depends_on:
-      - service-register-center
     networks:
       - longma
 
@@ -26,8 +22,6 @@ services:
       - "8000"
     environment:
       EUREKA_HOST: service-register-center
-    depends_on:
-      - service-register-center
     networks:
       - longma
 
@@ -37,8 +31,6 @@ services:
       - "8010"
     environment:
       EUREKA_HOST: service-register-center
-    depends_on:
-      - service-register-center
     networks:
       - longma
 

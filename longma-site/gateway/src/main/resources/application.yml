@@ -33,3 +33,9 @@ spring:
   zipkin:
     enabled: true
     base-url: http://zipkin:9411/
+---
+spring:
+  profiles: test
+eureka:
+  client:
+    enabled: false

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SECONDS=0
-WAIT_TIMEOUT=120
+WAIT_TIMEOUT=180
 BASE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $BASE_DIR/container.sh
 
@@ -11,13 +11,10 @@ wait_container_ok_by_log $WAIT_TIMEOUT "elasticsearch" "started"
 wait_container_ok_by_log $WAIT_TIMEOUT "logstash" "started Logstash"
 wait_container_ok_by_log $WAIT_TIMEOUT "zipkin" "Started ZipkinServer"
 
-echo "启动服务注册中心"
-docker-compose up -d service-register-center
-wait_container_ok_by_log $WAIT_TIMEOUT "service-register-center" "Started Application"
-
-echo "启动各种服务"
+echo "启动后台服务"
 docker-compose up -d
 docker-compose scale chat-message-service=2
+wait_container_ok_by_log $WAIT_TIMEOUT "service-register-center" "Started Application"
 wait_container_ok_by_log $WAIT_TIMEOUT "gateway" "Started Application"
 wait_container_ok_by_log $WAIT_TIMEOUT "auth-service" "Started Application"
 wait_container_ok_by_log $WAIT_TIMEOUT "chat-message-service" "Started Application"

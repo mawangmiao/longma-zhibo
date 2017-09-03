@@ -1,4 +1,4 @@
-package com.pengshuang.longma.service.auth;
+package com.pengshuang.longma.service_register_center;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(properties = {"eureka.client.enabled=false"})
-public class ApplicationTest {
+@SpringBootTest
+public class ApplicationIT {
 
     @Test
     public void contextLoads() {

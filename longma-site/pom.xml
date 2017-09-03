@@ -143,8 +143,9 @@
                     <configuration>
                         <repository>${parent.artifactId}/${project.artifactId}</repository>
                         <tag>${project.version}</tag>
-                        <retryCount>4</retryCount>
-                        <connectTimeoutMillis>10000</connectTimeoutMillis>
+                        <retryCount>5</retryCount>
+                        <connectTimeoutMillis>5000</connectTimeoutMillis>
+                        <readTimeoutMillis>5000</readTimeoutMillis>
                     </configuration>
                 </plugin>
             </plugins>

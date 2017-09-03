@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: chat-message-service
+    name: @project.artifactId@
 
 eureka:
   client:

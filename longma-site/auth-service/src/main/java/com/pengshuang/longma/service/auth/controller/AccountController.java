@@ -2,6 +2,7 @@ package com.pengshuang.longma.service.auth.controller;
 
 import com.pengshuang.longma.api.account.AccountService;
 import com.pengshuang.longma.common.entity.StringResult;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import java.security.Principal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+@Slf4j
 @RestController
 public class AccountController implements AccountService {
 
@@ -18,9 +20,10 @@ public class AccountController implements AccountService {
         return null;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping({"/", "/welcome"})
     public String welcome() {
-        return "Welcome to Account Service";
+        log.info("Welcome to Auth Service");
+        return "Welcome to Auth Service";
     }
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)

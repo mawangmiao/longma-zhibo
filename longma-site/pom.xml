@@ -22,7 +22,6 @@
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <dockerfile.maven.plugin.version>1.3.4</dockerfile.maven.plugin.version>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
     </properties>
 
@@ -127,6 +126,29 @@
     </dependencies>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>1.3.4</version>
+                    <executions>
+                        <execution>
+                            <id>default</id>
+                            <goals>
+                                <goal>build</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <repository>${parent.artifactId}/${project.artifactId}</repository>
+                        <tag>${project.version}</tag>
+                        <retryCount>4</retryCount>
+                        <connectTimeoutMillis>10000</connectTimeoutMillis>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

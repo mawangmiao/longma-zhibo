@@ -23,6 +23,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <ch.qos.logback.version>1.2.3</ch.qos.logback.version>
+        <docker.build.skip>false</docker.build.skip>
     </properties>
 
     <parent>
@@ -143,6 +144,7 @@
                     <configuration>
                         <repository>${parent.artifactId}/${project.artifactId}</repository>
                         <tag>${project.version}</tag>
+                        <skip>${docker.build.skip}</skip>
                         <retryCount>5</retryCount>
                         <connectTimeoutMillis>5000</connectTimeoutMillis>
                         <readTimeoutMillis>5000</readTimeoutMillis>
